@@ -1,0 +1,5 @@
+moderngl
+numpy
+pyrr
+pillow
+hkube-python-wrapper==0.3.4
