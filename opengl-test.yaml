@@ -1,0 +1,17 @@
+# range.yml
+name: opengl-test
+env: python # can be python or javascript
+# version: 1.0.1
+baseImage: yehiyam/glvnd-python-37-base:1.0.0
+resources:
+  cpu: 0.1
+  gpu: 0.1 
+  mem: 256Mi
+algorithmEnv:
+  USE_EGL: 'true'
+options:
+  binary: 'true'
+  opengl: 'false'
+code:
+  path: opengl-test.tar.gz
+  entryPoint: alg.py
