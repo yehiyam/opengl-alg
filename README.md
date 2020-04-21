@@ -27,10 +27,7 @@ docker run --rm -it  --runtime=nvidia  -e USE_EGL=true -e WORKER_BINARY=true -e 
         "binary": true
     },
     "algorithmImage": "yehiyam/opengl-alg:v0.0.3",
-    "type": "Image",
-    "nodeSelector": {
-        "nvidia-tesla-k80": "true"
-    }
+    "type": "Image"
 }
 ```
 
@@ -46,10 +43,7 @@ docker run --rm -it  --runtime=nvidia  -e USE_EGL=true -e WORKER_BINARY=true -e 
         "binary": true
     },
     "algorithmImage": "yehiyam/opengl-alg:v0.0.3",
-    "type": "Image",
-    "nodeSelector": {
-        "nvidia-tesla-k80": "true"
-    }
+    "type": "Image"
 }
 ```
 
