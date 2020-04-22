@@ -15,9 +15,9 @@ docker run --rm -it  --runtime=nvidia -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLA
 docker run --rm -it  --runtime=nvidia  -e USE_EGL=true -e WORKER_BINARY=true -e WORKER_SOCKET_URL=ws://hkube-myproject.10.42.128.41.nip.io/hkube/debug/ogl yehiyam/opengl-alg:v0.0.3
 ```
 ## algorithm definition (OpenGL)
-```yaml
+```json
 {
-    "name": "opengl-alg",
+    "name": "xgl-alg",
     "cpu": 1,
     "gpu": 0.1,
     "mem": "256Mi",
@@ -32,15 +32,18 @@ docker run --rm -it  --runtime=nvidia  -e USE_EGL=true -e WORKER_BINARY=true -e 
 ```
 
 ## algorithm definition (egl)
-```yaml
+```json
 {
-    "name": "opengl-alg",
+    "name": "egl-alg",
     "cpu": 1,
     "gpu": 0.1,
     "mem": "256Mi",
     "minHotWorkers": 0,
     "options": {
         "binary": true
+    },
+    "algorithmEnv": {
+        "USE_EGL": "true"
     },
     "algorithmImage": "yehiyam/opengl-alg:v0.0.3",
     "type": "Image"
