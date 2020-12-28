@@ -6,7 +6,7 @@ import io
 import time
 import os
 
-USE_EGL=os.environ.get('USE_EGL', False) in ['True', 'true']
+USE_EGL=os.environ.get('USE_EGL', 'True') in ['True', 'true']
 if(USE_EGL):
     # -------------------
     # CREATE CONTEXT HERE
@@ -84,7 +84,7 @@ def start(args, hkubeApi):
     time.sleep(sleep)
     return {'buffer': in_mem_file.getvalue(), 'size': fbo.size, 'format': 'RGB'}
 
-# if __name__ == "__main__":
-#     with open("/hkube-logs/1.jpg","wb") as file:
-#         print('write')
-#         file.write(start({"input":[{'sleep':0}]}, None).get('buffer'))
+if __name__ == "__main__":
+    with open("/hkube-logs/1.jpg","wb") as file:
+        print('write')
+        file.write(start({"input":[{'sleep':0}]}, None).get('buffer'))
