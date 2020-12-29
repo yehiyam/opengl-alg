@@ -74,5 +74,5 @@ ADD ./requirements.txt /opengl/
 WORKDIR /opengl
 RUN pip install -r requirements.txt
 ADD *.py /opengl/
-# CMD ["python", "-u", "alg.py"]
-CMD ["/bin/sh", "-c", "python -u app.py 2>&1 |tee /hkube-logs/stdout.log"]
+CMD ["python", "-u", "alg.py"]
+# CMD ["/bin/sh", "-c", "python -u app.py 2>&1 |tee /hkube-logs/stdout.log"]

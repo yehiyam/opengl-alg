@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: egl-test
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: egl-test
+  template:
+    metadata:
+      labels:
+        app: egl-test
+    spec:
+      containers:
+      - name: egl-test
+        image: yehiyam/egl:v0.0.1
+        command: ['sh', '-c', 'while true; do python alg.py; sleep 2; done']
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+            nvidia.com/gpu: 1

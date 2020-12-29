@@ -85,6 +85,6 @@ def start(args, hkubeApi):
     return {'buffer': in_mem_file.getvalue(), 'size': fbo.size, 'format': 'RGB'}
 
 if __name__ == "__main__":
-    with open("/hkube-logs/1.jpg","wb") as file:
+    with open("1.jpg","wb") as file:
         print('write')
         file.write(start({"input":[{'sleep':0}]}, None).get('buffer'))
